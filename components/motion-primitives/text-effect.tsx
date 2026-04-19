@@ -15,7 +15,7 @@ export type PresetType = 'blur' | 'fade-in-blur' | 'scale' | 'fade' | 'slide';
 export type PerType = 'word' | 'char' | 'line';
 
 export type TextEffectProps = {
-  children: string;
+  children: React.ReactNode;
   per?: PerType;
   as?: keyof React.JSX.IntrinsicElements;
   variants?: {
@@ -221,7 +221,21 @@ export function TextEffect({
   segmentTransition,
   style,
 }: TextEffectProps) {
-  const segments = splitText(children, per);
+  const textContent = React.useMemo(() => {
+    if (typeof children === 'string' || typeof children === 'number') {
+      return String(children);
+    }
+
+    return React.Children.toArray(children)
+      .map((child) =>
+        typeof child === 'string' || typeof child === 'number'
+          ? String(child)
+          : ''
+      )
+      .join('');
+  }, [children]);
+
+  const segments = splitText(textContent, per);
   const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;
 
   const baseVariants = preset
@@ -274,7 +288,7 @@ export function TextEffect({
           onAnimationStart={onAnimationStart}
           style={style}
         >
-          {per !== 'line' ? <span className='sr-only'>{children}</span> : null}
+          {per !== 'line' ? <span className='sr-only'>{textContent}</span> : null}
           {segments.map((segment, index) => (
             <AnimationComponent
               key={`${per}-${index}-${segment}`}
