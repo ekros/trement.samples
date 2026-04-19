@@ -1,0 +1,30 @@
+{
+  "header": {
+    "icon": {
+      "name": "Tina",
+      "color": "orange",
+      "style": "float",
+      "imageUrl": "/trement-header.webp"
+    },
+    "name": "",
+    "color": "default",
+    "nav": []
+  },
+  "footer": {
+    "social": [
+      {
+        "icon": {
+          "name": "BiLogoWhatsapp",
+          "color": "green",
+          "imageUrl": ""
+        },
+        "url": "https://wa.me/+34600000000"
+      }
+    ]
+  },
+  "theme": {
+    "color": "blue",
+    "font": "sans",
+    "darkMode": "dark"
+  }
+}

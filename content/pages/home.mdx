@@ -1,0 +1,119 @@
+---
+title: Trement
+blocks:
+  - background: none
+    url: /landing-page.webm
+    headline: TREMENT
+    enableHeadlineScaleEffect: true
+    tagline: "es::Tecnología al servicio de tus ideas;;en::Technology at the service of your ideas"
+    _template: hero
+  - text: "es::\U0001F4C5 Reserva y hablemos de tu proyecto;;en::\U0001F4C5 Book a time and let's talk"
+    background: none
+    url: 'https://calendly.com/trement'
+    newTab: true
+    _template: callout
+  - title: "es::Servicios;;en::Services"
+    description: "es::En Trement, nos apasiona la tecnología y su capacidad para transformar ideas en realidad. Ofrecemos servicios de desarrollo web, entrenamiento en inteligencia artificial y soluciones con drones para llevar tus proyectos al siguiente nivel.;;en::At Trement, we are passionate about technology and its ability to transform ideas into reality. We offer web development services, AI training, and drone solutions to take your projects to the next level."
+    items:
+      - title: "es::Desarrollo Web;;en::Web Development"
+        icon:
+          name: "BiCode"
+          color: "white"
+          style: "float"
+        text: "es::Creamos sitios y aplicaciones web a medida con las últimas tecnologías;;en::We create custom websites and web applications with the latest technologies."
+      - title: "es::Formación en tecnologías digitales;;en::Digital Technologies Training"
+        icon:
+          name: "BiBook"
+          color: "white"
+          style: "float"
+        text: "es::Realizamos mentorías individuales y grupales para ayudarte a alcanzar tus objetivos en el ámbito digital.;;en::We provide individual and group mentoring to help you achieve your goals in the digital field."
+      - title: "es::Servicios con drones;;en::Drone Services"
+        icon:
+          name: "BiPaperPlane"
+          color: "white"
+          style: "float"
+        text: "es::Si tu proyecto requiere soluciones con drones, estamos aquí para ayudarte. Desde planos aéreos hasta fotogrametría.;;en::If your project requires drone solutions, we are here to help. From aerial plans to photogrammetry."
+    background: bg-black
+    isBlackGlass: true
+    _template: features
+  - _template: spacer
+    height: 100px
+  - title: "es::Quién hay detrás de Trement;;en::Who is behind Trement"
+    background: bg-black
+    bodyES: "es::Mi nombre es Eric, ayudo a personas y negocios a crear su presencia digital y hacer crecer sus proyectos. Con casi dos décadas de experiencia en el mundo del software, tengo las habilidades y conocimientos para llevar tus ideas al siguiente nivel."
+    bodyEN: "en::My name is Eric, I help people and businesses create their digital presence and grow their projects. With nearly two decades of experience in the software world, I have the skills and knowledge to take your ideas to the next level."
+    imageYOffset: -10
+    imageUrl: /eric-trement.webp
+    isBlackGlass: true
+    _template: about
+  - _template: spacer
+    height: 100px
+  - title: "es::Desarrollo Web;;en::Web Development"
+    background: bg-black
+    bodyES: "es::Hola!!"
+    bodyEN: "en::Hello!!"
+    imageUrl: /web-development.webp
+    imagePosition: right
+    isBlackGlass: true
+    _template: about
+  - title: "es::Trement training;;en::Trement training"
+    background: bg-black
+    bodyES: "es::Hola!!"
+    bodyEN: "en::Hello!!"
+    imageUrl: /training.webp
+    isBlackGlass: true
+    _template: about
+  - title: "es::Servicios con drones;;en::Drone Services"
+    background: bg-black
+    bodyES: "es::Hola!!"
+    bodyEN: "en::Hello!!"
+    imageUrl: /drone-pilot.webp
+    imagePosition: right
+    _template: about
+  - _template: spacer
+    height: 100px
+  - title: "es::Nuestros proyectos;;en::\U0001F3A5Our Projects"
+    imageUrls:
+      - /bambala.webm
+      - /uploads/reels.webp
+    services:
+      - "es::Bambala Studio;;en::Bambala Studio" # bambala (add short video with autoplay and loop)
+      # ! Just add fake projects.. do not block this for europenow
+      # como relleno esto?? fake projects?? puedes crear una plantilla con tina y luego rellenarla con contenido generado
+      # - "es::Proyecto 2;;en::\U0001F4F1Reels & Social Media Content" # otro site (europenow.org)
+    servicesDescription:
+      - "es::Proyecto 1;;en::Project 1"
+      - "es::Proyecto 2;;en::Project 2"
+    imageYOffsets:
+      - '0'
+      - '0'
+    exampleLinkTexts:
+      - "es::Visita el sitio;;en::Visit the site"
+      - "es::Visita el sitio;;en::Visit the site"
+    exampleLinkUrls:
+      - 'https://wa.me/+34667341717'
+      - 'https://wa.me/+34667341717'
+    _template: services
+  - _template: spacer
+    height: 100px
+  - title: "es::Contacto;;en::Contact"
+    fields:
+      - name: name
+        label: "es::Nombre;;en::Name"
+        type: text
+      - name: email
+        label: "es::Correo electrónico;;en::Email"
+        type: text
+      - name: message
+        label: "es::Mensaje;;en::Message"
+        type: textarea
+    submitUrl: 'http://localhost:3000/api/contact'
+    submitButtonText: "es::Enviar;;en::Submit"
+    successMessage: "es::¡Gracias por contactarnos! Te responderemos lo antes posible.;;en::Thank you for contacting us! We will get back to you as soon as possible."
+    requiredMessage: "es::Por favor, completa todos los campos.;;en::Please fill out all fields."
+    submitErrorMessage: "es::Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.;;en::There was an error sending your message. Please try again later."
+    _template: contact
+---
+
+# add a gallery of works
+# add a contact form

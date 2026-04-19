@@ -1,0 +1,316 @@
+fragment PageParts on Page {
+  __typename
+  theme
+  blocks {
+    __typename
+    ... on PageBlocksHero {
+      background
+      headline
+      tagline
+      actions {
+        __typename
+        label
+        type
+        icon {
+          __typename
+          name
+          color
+          style
+          imageUrl
+        }
+        link
+      }
+      enableHeadlineScaleEffect
+      image {
+        __typename
+        src
+        alt
+        videoUrl
+      }
+    }
+    ... on PageBlocksCallout {
+      background
+      text
+      url
+      newTab
+      useArrowDown
+      backgroundColor
+      borderColor
+    }
+    ... on PageBlocksFeatures {
+      background
+      isBlackGlass
+      title
+      description
+      items {
+        __typename
+        icon {
+          __typename
+          name
+          color
+          style
+          imageUrl
+        }
+        title
+        text
+      }
+    }
+    ... on PageBlocksStats {
+      background
+      title
+      description
+      stats {
+        __typename
+        stat
+        type
+      }
+    }
+    ... on PageBlocksCta {
+      title
+      description
+      actions {
+        __typename
+        label
+        type
+        icon {
+          __typename
+          name
+          color
+          style
+          imageUrl
+        }
+        link
+      }
+    }
+    ... on PageBlocksContent {
+      background
+      isBlackGlass
+      body
+    }
+    ... on PageBlocksTestimonial {
+      background
+      title
+      description
+      testimonials {
+        __typename
+        quote
+        author
+        role
+        avatar
+      }
+    }
+    ... on PageBlocksVideo {
+      background
+      color
+      url
+      autoPlay
+      loop
+      controls
+      muted
+      tag
+    }
+    ... on PageBlocksVideo_hero {
+      background
+      color
+      url
+      useImage
+      heroImageUrls
+      headline
+      tagline
+      autoPlay
+      muted
+      loop
+      controls
+      calloutText
+      calloutUrl
+      calloutText2
+      calloutUrl2
+      videoScale
+      brightness
+      slideDuration
+      backdropDarkEffect
+    }
+    ... on PageBlocksAbout {
+      background
+      isBlackGlass
+      title
+      bodyEN
+      bodyES
+      imageUrl
+      imageUrls
+      imagePosition
+      socialNetworks
+      imageYOffset
+      autoplayDelayMs
+      exampleLinkText
+      exampleLinkUrl
+    }
+    ... on PageBlocksServices {
+      background
+      title
+      imageUrls
+      services
+      servicesDescription
+      imageYOffsets
+      exampleLinkTexts
+      exampleLinkUrls
+    }
+    ... on PageBlocksSlideshow {
+      background
+      title
+      imageUrls
+      services
+      servicesDescription
+      imageYOffsets
+      exampleLinkTexts
+      exampleLinkUrls
+    }
+    ... on PageBlocksFilters {
+      background
+      filters
+      default
+    }
+    ... on PageBlocksSpacer {
+      height
+    }
+    ... on PageBlocksContact {
+      background
+      isBlackGlass
+      title
+      description
+      submitUrl
+      submitButtonText
+      successMessage
+      requiredMessage
+      submitErrorMessage
+      fields {
+        __typename
+        name
+        label
+        type
+        required
+        checkboxDefault
+      }
+    }
+    ... on PageBlocksOpeningTimes {
+      background
+      title
+      description
+      days {
+        __typename
+        day
+        hours
+        closed
+      }
+    }
+    ... on PageBlocksContactMap {
+      background
+      title
+      description
+      address
+      zoom
+    }
+  }
+}
+
+fragment PostParts on Post {
+  __typename
+  title
+  heroImg
+  excerpt
+  author {
+    ... on Author {
+      __typename
+      name
+      avatar
+    }
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+  }
+  date
+  tags {
+    __typename
+    tag {
+      ... on Tag {
+        __typename
+        name
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          hasReferences
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  _body
+}
+
+fragment AuthorParts on Author {
+  __typename
+  name
+  avatar
+}
+
+fragment TagParts on Tag {
+  __typename
+  name
+}
+
+fragment GlobalParts on Global {
+  __typename
+  header {
+    __typename
+    icon {
+      __typename
+      name
+      color
+      style
+      imageUrl
+    }
+    imageUrl
+    name
+    color
+    nav {
+      __typename
+      href
+      label
+    }
+  }
+  footer {
+    __typename
+    social {
+      __typename
+      icon {
+        __typename
+        name
+        color
+        style
+        imageUrl
+      }
+      url
+    }
+  }
+  theme {
+    __typename
+    color
+    font
+    darkMode
+  }
+}
