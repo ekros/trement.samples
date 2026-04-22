@@ -64,12 +64,12 @@ const CardDecorator = ({
   </div>
 )
 
-export const Feature: React.FC<PageBlocksFeaturesItems & { language?: string; showGridEffect?: boolean }> = (data) => {
+export const Feature: React.FC<PageBlocksFeaturesItems & { language?: string }> = (data) => {
   const language = data.language || 'es';
   return (
     <div className="group shadow-zinc-950/5">
       <CardHeader className="pb-3">
-        <CardDecorator showGridEffect={data.showGridEffect}>
+        <CardDecorator showGridEffect={Boolean(data.showGridEffect)}>
           {data.icon && (
             <Icon
               tinaField={tinaField(data, "icon")}
