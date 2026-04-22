@@ -1308,6 +1308,7 @@ import { TinaMarkdown as TinaMarkdown2 } from "tinacms/dist/rich-text";
 var defaultFeature = {
   title: "Here's Another Feature",
   text: "This is where you might talk about the feature, if this wasn't just filler text.",
+  showGridEffect: false,
   icon: {
     name: "Tina",
     color: "white",
@@ -1355,6 +1356,12 @@ var featureBlockSchema = {
       },
       fields: [
         iconSchema,
+        {
+          type: "boolean",
+          label: "Show Grid Effect",
+          name: "showGridEffect",
+          description: "Show the decorative grid background and corner border behind the icon."
+        },
         {
           type: "string",
           label: "Title",

@@ -147,6 +147,7 @@ type PageBlocksFeaturesItemsIcon {
 
 type PageBlocksFeaturesItems {
   icon: PageBlocksFeaturesItemsIcon
+  showGridEffect: Boolean
   title: String
   text: JSON
 }
@@ -417,6 +418,7 @@ input RichTextFilter {
 
 input PageBlocksFeaturesItemsFilter {
   icon: PageBlocksFeaturesItemsIconFilter
+  showGridEffect: BooleanFilter
   title: StringFilter
   text: RichTextFilter
 }
@@ -1018,6 +1020,7 @@ input PageBlocksFeaturesItemsIconMutation {
 
 input PageBlocksFeaturesItemsMutation {
   icon: PageBlocksFeaturesItemsIconMutation
+  showGridEffect: Boolean
   title: String
   text: JSON
 }

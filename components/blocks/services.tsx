@@ -174,8 +174,6 @@ export const Services = ({ data }: { data: PageBlocksServices }) => {
             <p className="text-white px-4 py-3 [text-shadow:1px_1px_black]">
               {parseMultiLingualText(service.trim(), lang)}
             </p>
-            {i % 2 === 0 &&
-              <span className="absolute top-0" style={{ zIndex: 50 - i, color: 'gray', fontSize: '7px', right: '10px' }}>Bambala Studio</span>}
           </div>
         </div>
       </div>

@@ -200,8 +200,6 @@ strong {
 
 /* ── Page Themes ────────────────────────────────────── */
 
-/* ! refina el este estilo. Mira si puedes cambiar tambien ese fondo negro añadiendo alguna variable */
-/** tambien me gustaria saber si estas variables pueden exponerse en Tina, quizá como un bloque? */
 .theme-pasteleria {
   --background: #fdf6f0;
   --foreground: #4a3728;
@@ -222,6 +220,8 @@ strong {
   --ring: #e8a0bf;
   --decoration-gradient-start: #f8bbd0;
   --decoration-gradient-end: #b2dfdb;
+
+  background: var(--background);
   color: #4a3728;
 }
 
@@ -234,7 +234,7 @@ strong {
 .theme-pasteleria h2,
 .theme-pasteleria h3,
 .theme-pasteleria h4 {
-  color: #3d2c2c;
+  color: #f6c7e6;
 }
 
 .theme-pasteleria strong {

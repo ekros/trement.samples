@@ -84,7 +84,15 @@ export const VideoHero = ({ data }: { data: PageBlocksVideo_Hero }) => {
             )}
             {data.tagline && (
               <div data-tina-field={tinaField(data, 'tagline')}>
-                <TextEffect per='line' preset='fade-in-blur' speedSegment={0.3} delay={0.5} as='p' className='mx-auto max-w-2xl px-3 text-balance text-sm leading-relaxed sm:text-lg md:text-2xl md:leading-relaxed drop-shadow-md'>
+                <TextEffect
+                  per='line'
+                  preset='fade-in-blur'
+                  speedSegment={0.3}
+                  delay={0.5}
+                  as='p'
+                  style={{ color: 'white' }}
+                  className='mx-auto max-w-2xl px-3 text-balance text-sm leading-relaxed sm:text-lg md:text-2xl md:leading-relaxed drop-shadow-md font-bold'
+                >
                   {tagLine}
                 </TextEffect>
               </div>

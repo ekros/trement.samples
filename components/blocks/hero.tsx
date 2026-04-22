@@ -104,7 +104,15 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         )}
         {data.tagline && (
           <div data-tina-field={tinaField(data, 'tagline')}>
-            <TextEffect per='line' preset='fade-in-blur' speedSegment={0.3} delay={0.5} as='p' className='mx-auto mt-8 max-w-2xl text-balance text-lg'>
+            <TextEffect
+              per='line'
+              preset='fade-in-blur'
+              speedSegment={0.3}
+              delay={0.5}
+              as='p'
+              style={{ textShadow: '0 0 1px rgba(255, 255, 255, 0.85)' }}
+              className='mx-auto mt-8 max-w-2xl text-balance text-lg font-bold'
+            >
               {tagLine}
             </TextEffect>
           </div>

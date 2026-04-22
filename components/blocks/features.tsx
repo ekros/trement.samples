@@ -34,20 +34,42 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
   )
 }
 
-const CardDecorator = ({ children }: { children: React.ReactNode }) => (
-  <div className="relative mx-auto size-36 duration-200 [--color-border:color-mix(in_oklab,var(--color-zinc-950)10%,transparent)] group-hover:[--color-border:color-mix(in_oklab,var(--color-zinc-950)20%,transparent)] dark:[--color-border:color-mix(in_oklab,var(--color-white)15%,transparent)] dark:group-hover:bg-white/5 dark:group-hover:[--color-border:color-mix(in_oklab,var(--color-white)20%,transparent)]">
-    <div aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:24px_24px]" />
-    <div aria-hidden className="bg-radial to-background absolute inset-0 from-transparent to-75%" />
-    <div className="bg-background absolute inset-0 m-auto flex size-12 items-center justify-center border-l border-t">{children}</div>
+const CardDecorator = ({
+  children,
+  showGridEffect = false,
+}: {
+  children: React.ReactNode;
+  showGridEffect?: boolean;
+}) => (
+  <div
+    className={`relative mx-auto size-36 duration-200 ${showGridEffect
+      ? '[--color-border:color-mix(in_oklab,var(--color-zinc-950)10%,transparent)] group-hover:[--color-border:color-mix(in_oklab,var(--color-zinc-950)20%,transparent)] dark:[--color-border:color-mix(in_oklab,var(--color-white)15%,transparent)] dark:group-hover:bg-white/5 dark:group-hover:[--color-border:color-mix(in_oklab,var(--color-white)20%,transparent)]'
+      : 'flex items-center justify-center'
+      }`}
+  >
+    {showGridEffect && (
+      <>
+        <div aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div aria-hidden className="bg-radial to-background absolute inset-0 from-transparent to-75%" />
+      </>
+    )}
+    <div
+      className={`${showGridEffect
+        ? 'bg-background absolute inset-0 m-auto flex size-12 items-center justify-center'
+        : 'flex size-full items-center justify-center'
+        } ${showGridEffect ? 'border-l border-t' : ''}`}
+    >
+      {children}
+    </div>
   </div>
 )
 
-export const Feature: React.FC<PageBlocksFeaturesItems & { language?: string }> = (data) => {
+export const Feature: React.FC<PageBlocksFeaturesItems & { language?: string; showGridEffect?: boolean }> = (data) => {
   const language = data.language || 'es';
   return (
     <div className="group shadow-zinc-950/5">
       <CardHeader className="pb-3">
-        <CardDecorator>
+        <CardDecorator showGridEffect={data.showGridEffect}>
           {data.icon && (
             <Icon
               tinaField={tinaField(data, "icon")}
@@ -77,6 +99,7 @@ export const Feature: React.FC<PageBlocksFeaturesItems & { language?: string }> 
 const defaultFeature = {
   title: "Here's Another Feature",
   text: "This is where you might talk about the feature, if this wasn't just filler text.",
+  showGridEffect: false,
   icon: {
     name: "Tina",
     color: "white",
@@ -125,6 +148,12 @@ export const featureBlockSchema: Template = {
       },
       fields: [
         iconSchema as any,
+        {
+          type: "boolean",
+          label: "Show Grid Effect",
+          name: "showGridEffect",
+          description: "Show the decorative grid background and corner border behind the icon.",
+        },
         {
           type: "string",
           label: "Title",
